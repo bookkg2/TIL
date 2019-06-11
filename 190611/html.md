@@ -2,7 +2,7 @@
 
 ​      
 
-- 네이버에는 어떻게담기는 가 ?
+- 네이버에는 어떻게담기는 가 ? 
 
   ![1560242700384](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1560242700384.png)
 
