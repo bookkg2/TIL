@@ -2,7 +2,7 @@
 
 ​      
 
-- 네이버에는 어떻게담기는 가 ? 
+- 네이버에는 어떻게담기는 가 ?
 
   ![1560242700384](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1560242700384.png)
 
@@ -102,7 +102,7 @@ http://70.12.50.220:80/day01/a1.html
 <h6>Header</h6>
 ```
 
-HTML에서 여러개를 묶을수 있는 기능이 한개인데
+HTML에서 여러개를 묶을수 있는 기능이 한개
 
 ### 리스트
 
