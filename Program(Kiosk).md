@@ -1,0 +1,551 @@
+### 2조 시나리오(키오스트 개발)
+
+```html
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        table {
+            text-align: center;
+            float: left;
+        }
+        #order {
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        var totalfee;
+        var fee = '';
+        var counta1 = 0;
+        var counta2 = 0;
+        var counta3 = 0;
+        var counta4 = 0;
+        var counta5 = 0;
+        var counta6 = 0;
+        var counta7 = 0;
+        var counta8 = 0;
+ 
+        function clearr() {
+            location.href='kiosk.html'
+        };
+ 
+        function getmenu1(f) {
+            //ds.innerHTML += f + "<br>";
+            display1.innerHTML = f;
+            counta1++;
+            count1.innerHTML = counta1;
+            document.getElementById('butt1').style.display = "";
+            fee += "+" + document.getElementById('HOT 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+ 
+        function getmenu2(f) {
+            display2.innerHTML = f;
+            counta2++;
+            count2.innerHTML = counta2;
+            document.getElementById('butt2').style.display = "";
+            fee += "+" + document.getElementById('HOT 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function getmenu3(f) {
+            display3.innerHTML = f;
+            counta3++;
+            count3.innerHTML = counta3;
+            document.getElementById('butt3').style.display = "";
+            fee += "+" + document.getElementById('아인슈페너').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+ 
+        };
+        function getmenu4(f) {
+ 
+            display4.innerHTML = f;
+            counta4++;
+            count4.innerHTML = counta4;
+            document.getElementById('butt4').style.display = "";
+            fee += "+" + document.getElementById('HOT 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function getmenu5(f) {
+ 
+            display5.innerHTML = f;
+            counta5++;
+            count5.innerHTML = counta5;
+            document.getElementById('butt5').style.display = "";
+            fee += "+" + document.getElementById('ICE 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+ 
+        };
+        function getmenu6(f) {
+ 
+            display6.innerHTML = f;
+            counta6++;
+            count6.innerHTML = counta6;
+            document.getElementById('butt6').style.display = "";
+            fee += "+" + document.getElementById('ICE 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+ 
+        };
+        function getmenu7(f) {
+ 
+            display7.innerHTML = f;
+            counta7++;
+            count7.innerHTML = counta7;
+            document.getElementById('butt7').style.display = "";
+            fee += "+" + document.getElementById('플랫화이트').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function getmenu8(f) {
+ 
+            display8.innerHTML = f;
+            counta8++;
+            count8.innerHTML = counta8;
+            document.getElementById('butt8').style.display = "";
+            fee += "+" + document.getElementById('ICE 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+ 
+ 
+        function counttt1() {
+            this.value = document.getElementById('plus1').value;
+            counta1--;
+            if (counta1 <= 0) {
+                fee += "-" + document.getElementById('HOT 아메리카노').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt1').style.display = 'none';
+                display1.innerHTML = '';
+                count1.innerHTML = '';
+                return;
+            }
+ 
+            fee += "-" + document.getElementById('HOT 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count1.innerHTML = counta1;
+        };
+        function counddd1() {
+            this.value = document.getElementById('plus1').value;
+            counta1++;
+            count1.innerHTML = counta1;
+            fee += "+" + document.getElementById('HOT 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+ 
+ 
+        function counttt2() {
+            this.value = document.getElementById('plus2').value;
+            counta2--;
+            if (counta2 <= 0) {
+                fee += "-" + document.getElementById('HOT 카페라떼').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt2').style.display = 'none';
+                display2.innerHTML = '';
+                count2.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('HOT 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count2.innerHTML = counta2;
+        };
+        function counddd2() {
+            this.value = document.getElementById('plus2').value;
+            counta2++;
+ 
+            count2.innerHTML = counta2;
+            fee += "+" + document.getElementById('HOT 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+ 
+        function counttt3() {
+            this.value = document.getElementById('plus3').value;
+            counta3--;
+            if (counta3 <= 0) {
+                fee += "-" + document.getElementById('아인슈페너').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt3').style.display = 'none';
+                display3.innerHTML = '';
+                count3.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('아인슈페너').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count3.innerHTML = counta3;
+        };
+        function counddd3() {
+            this.value = document.getElementById('plus3').value;
+            counta3++;
+ 
+            count1.innerHTML = counta1;
+            fee += "+" + document.getElementById('아인슈페너').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function counttt4() {
+            this.value = document.getElementById('plus4').value;
+            counta4--;
+            if (counta4 <= 0) {
+                fee += "-" + document.getElementById('HOT 초코라떼').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt4').style.display = 'none';
+                display4.innerHTML = '';
+                count4.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('HOT 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count4.innerHTML = counta4;
+        };
+        function counddd4() {
+            this.value = document.getElementById('plus4').value;
+            counta4++;
+ 
+            count4.innerHTML = counta4;
+            fee += "+" + document.getElementById('HOT 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function counttt5() {
+            this.value = document.getElementById('plus5').value;
+            counta5--;
+            if (counta5 <= 0) {
+                fee += "-" + document.getElementById('ICE 아메리카노').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt5').style.display = 'none';
+                display5.innerHTML = '';
+                count5.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('ICE 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count5.innerHTML = counta5;
+        };
+        function counddd5() {
+            this.value = document.getElementById('plus5').value;
+            counta5++;
+ 
+            count6.innerHTML = counta5;
+            fee += "+" + document.getElementById('ICE 아메리카노').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+ 
+        };
+        function counttt6() {
+            this.value = document.getElementById('plus6').value;
+            counta6--;
+            if (counta6 <= 0) {
+                fee += "-" + document.getElementById('ICE 카페라떼').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt6').style.display = 'none';
+                display6.innerHTML = '';
+                count6.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('ICE 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count6.innerHTML = counta6;
+        };
+        function counddd6() {
+            this.value = document.getElementById('plus6').value;
+            counta6++;
+ 
+            count6.innerHTML = counta6;
+            fee += "+" + document.getElementById('ICE 카페라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function counttt7() {
+            this.value = document.getElementById('plus7').value;
+            counta7--;
+            if (counta7 <= 0) {
+                fee += "-" + document.getElementById('플랫화이트').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt7').style.display = 'none';
+                display7.innerHTML = '';
+                count7.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('플랫화이트').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count7.innerHTML = counta7;
+        };
+        function counddd7() {
+            this.value = document.getElementById('plus7').value;
+            counta7++;
+ 
+            count7.innerHTML = counta7;
+            fee += "+" + document.getElementById('플랫화이트').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+        function counttt8() {
+            this.value = document.getElementById('plus8').value;
+            counta8--;
+            if (counta8 <= 0) {
+                fee += "-" + document.getElementById('ICE 초코라떼').value;
+                totalfee = eval(fee);
+                dt.innerHTML = totalfee;
+                document.getElementById('butt8').style.display = 'none';
+                display8.innerHTML = '';
+                count8.innerHTML = '';
+                return;
+            }
+            fee += "-" + document.getElementById('ICE 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+            count8.innerHTML = counta8;
+        };
+        function counddd8() {
+            this.value = document.getElementById('plus8').value;
+            counta8++;
+ 
+            count8.innerHTML = counta8;
+            fee += "+" + document.getElementById('ICE 초코라떼').value;
+            totalfee = eval(fee);
+            dt.innerHTML = totalfee;
+        };
+ 
+        function getresult(f) {
+            var pp = f.payment.value;
+            var tt = f.takeout.value;
+            pm.innerHTML = '';
+            to.innerHTML = '';
+            tm.innerHTML='';
+ 
+ 
+            if (dt.innerHTML=='0') {
+                tm.innerHTML = '메뉴를 선택하세요!';
+                return;
+            }
+            if (pp == '' || pp == null) {
+                pm.innerHTML = '선택해주세요!';
+                return;
+            }
+            if (tt == '' || tt == null) {
+                to.innerHTML = '선택해주세요!';
+                return;
+            } else {
+                alert('주문 완료');
+                return;
+            }
+        };
+    </script>
+</head>
+ 
+<body>
+    <!-- 메뉴판 -->
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    <h1>CAFE</h1>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <h3>COFFE</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><input onclick="getmenu1('HOT 아메리카노');" name="menu" id="HOT 아메리카노" value="4000" type="image" img
+                        src="4.jpg"></td>
+                <td><input onclick="getmenu2('HOT 카페라떼');" name="menu" type="image" img src="2.jpg" id="HOT 카페라떼"
+                        value="4500"></td>
+                <td><input onclick="getmenu3('아인슈페너');" name="menu" type="image" img src="5.jpg" id="아인슈페너"
+                        value="5000"></td>
+                <td><input onclick="getmenu4('HOT 초코라떼');" name="menu" type="image" img src="7.png" id="HOT 초코라떼" value="5000">
+                </td>
+            </tr>
+            <tr>
+                <td>HOT 아메리카노</td>
+                <td>HOT 카페라떼</td>
+                <td>아인슈페너</td>
+                <td>HOT 초코라떼</td>
+            </tr>
+            <tr>
+                <td>4000</td>
+                <td>4500</td>
+                <td>5000</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input onclick="getmenu5('ICE 아메리카노');" name="menu" type="image" img src="1.png" id="ICE 아메리카노"
+                        value="4000"></td>
+                <td><input onclick="getmenu6('ICE 카페라떼');" name="menu" type="image" img src="3.jpg" id="ICE 카페라떼"
+                        value="4500"></td>
+                <td><input onclick="getmenu7('플랫화이트');" name="menu" type="image" img src="6.jpg" id="플랫화이트"
+                        value="5000"> </td>
+                <td><input onclick="getmenu8('ICE 초코라떼');" name="menu" type="image" img src="8.png" id="ICE 초코라떼"
+                        value="5000"></td>
+            </tr>
+            <tr>
+                <td>ICE 아메리카노</td>
+                <td>ICE 카페라떼</td>
+                <td>플랫화이트</td>
+                <td>ICE 초코라떼</td>
+            </tr>
+            <tr>
+                <td>4000</td>
+                <td>4500</td>
+                <td>5000</td>
+                <td>5000</td>
+            </tr>
+ 
+        </tbody>
+    </table>
+ 
+    <!-- 주문내역 -->
+    <table id="order">
+        <tbody>
+            <tr>
+                <td colspan="3">
+                    <h1>ORDER</h1>
+                </td>
+            </tr>
+            <tr>
+                <td id="display1"></td>
+                <td id="count1"></td>
+                <td id="butt1" style="display:none">
+                    <input onclick="counttt1(this.value);" type="button" id="plus1" value="-">
+                    <input onclick="counddd1(this.value);" type="button" id="plus1" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display2"></td>
+                <td id="count2"></td>
+                <td td id="butt2" style="display:none">
+                    <input onclick="counttt2(this.value);" type="button" id="plus2" value="-">
+                    <input onclick="counddd2(this.value);" type="button" id="plus2" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display3"></td>
+                <td id="count3"></td>
+                <td td id="butt3" style="display:none">
+                    <input onclick="counttt3(this.value);" type="button" id="plus3" value="-">
+                    <input onclick="counddd3(this.value);" type="button" id="plus3" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display4"></td>
+                <td id="count4"></td>
+                <td td id="butt4" style="display:none">
+                    <input onclick="counttt4(this.value);" type="button" id="plus4" value="-">
+                    <input onclick="counddd4(this.value);" type="button" id="plus4" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display5"></td>
+                <td id="count5"></td>
+                <td td id="butt5" style="display:none">
+                    <input onclick="counttt5(this.value);" type="button" id="plus5" value="-">
+                    <input onclick="counddd5(this.value);" type="button" id="plus5" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display6"></td>
+                <td id="count6"></td>
+                <td td id="butt6" style="display:none">
+                    <input onclick="counttt6(this.value);" type="button" id="plus6" value="-">
+                    <input onclick="counddd6(this.value);" type="button" id="plus6" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display7"></td>
+                <td id="count7"></td>
+                <td td id="butt7" style="display:none">
+                    <input onclick="counttt7(this.value);" type="button" id="plus7" value="-">
+                    <input onclick="counddd7(this.value);" type="button" id="plus7" value="+">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="display8"></td>
+                <td id="count8"></td>
+                <td td id="butt8" style="display:none">
+                    <input onclick="counttt8(this.value);" type="button" id="plus8" value="-">
+                    <input onclick="counddd8(this.value);" type="button" id="plus8" value="+">
+                </td>
+                <td id="tm"></td>
+            </tr>
+ 
+ 
+            <form>
+                <tr>
+                    <td>
+                        <h3>PAYMENT</h3>
+                    </td>
+                    <td><select name="payment">
+                            <option value=""></option>
+                            <option value="카드">카드</option>
+                            <option value="현금">현금</option>
+                        </select></td>
+                    <td id="pm"></td>
+                </tr>
+ 
+                <tr>
+                    <td>
+                        <h3>매장 이용<input type="radio" name="takeout" value="매장"></h3>
+                    </td>
+                    <td>
+                        <h3>Take Out<input type="radio" name="takeout" value="takeout"></h3>
+                    </td>
+                    <td id="to">
+ 
+                    </td>
+                </tr>
+ 
+                <tr>
+                    <td>
+                        <h3>TOTAL</h3>
+                    </td>
+                    <td colspan="2" id="dt"></td>
+                </tr>
+                <tr>
+ 
+                    <td><input type="button" value="취소" onclick="clearr();" ></td>
+                    <td><input type="button" value="주문" onclick="getresult(this.form);"></td>
+                    <td></td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</body>
+ 
+</html>
+
+
+
+```
+
