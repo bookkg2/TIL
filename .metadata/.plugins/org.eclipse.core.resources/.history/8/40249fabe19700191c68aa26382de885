@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+		var app = new EventSource('test.jsp');
+		app.addEventListener('messge',function(e){
+			alert('ok');
+		},false);
+});
+</script>
+</head>
+<body>
+<h1>Event</h1>
+<h3></h3>
+</body>
+</html>
+
+
+

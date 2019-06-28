@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+function display(result){
+	if(result.equals('1')){
+		$('span').text('사용가능합니다.');
+	}else{
+		$('span').text('이미사용중입니다.');
+	}
+}
+function checkId(id){
+	$.ajax({
+		url:'register',
+		data:{'id':id},
+		method:'get',
+		success:function(result){
+			//alert(result);
+			display(result);
+		}
+	});
+};
+$(document).ready(function(){
+	$('input[type="button"]').click(function(){
+		
+		$('#login_form').attr('method','post');
+		$('#login_form').attr('action','register');
+		$('#login_form').submit();
+	});
+	$('input[name="id"]').keyup(function(){
+		var id = $(this).val();
+		checkId(id);
+	});
+});
+</script>
+</head>
+<body>
+<h1>REGISTER</h1>
+<form id="login_form">
+ID<input type="text" name="id"><span></span><br>
+PWD<input type="password" name="pwd"><br>
+NAME<input type="text" name="name"><br>
+<input type="button" value="REGISTER">
+</form>
+</body>
+</html>
+
+
+
+
+

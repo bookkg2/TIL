@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style></style>
+<script>
+var person = [
+   {id:"id01",name:"이말숙"},
+   {id:"id02",name:"김말숙"},
+   {id:"id03",name:"정말숙"},
+   {id:"id04",name:"황말숙"},
+   {id:"id05",name:"오말숙"}
+]
+function getData(){
+	var data = document.getElementById('data');
+	var result = '';
+	result += '<table border="2">';
+	result += '<tbody>';
+	for(var i in person){
+		result += '<tr>'
+		+'<td>'+person[i].id+'</td>'
+		+'<td>'+person[i].name+'</td>'
+		+'</tr>';
+	};	
+	result += '</tbody>';
+	result += '</table>';
+	data.innerHTML = result; 
+};
+
+</script>
+</head>
+<body>
+<h1 onclick="getData();">FOR TEST</h1>
+<div id="data"></div>
+</body>
+</html>
+
+
+

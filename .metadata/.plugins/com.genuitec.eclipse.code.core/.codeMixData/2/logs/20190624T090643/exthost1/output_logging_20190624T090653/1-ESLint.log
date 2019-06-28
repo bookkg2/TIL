@@ -1,0 +1,19 @@
+[Info  - 09:29:03] ESLint server stopped.
+[Info  - 09:29:03] ESLint server running in node v10.2.0
+[Info  - 09:29:03] ESLint server is running.
+[Info  - 09:29:04] 
+Failed to load the ESLint library for the document c:\web\day12\web\crypto\rollups\aes.js
+
+To use ESLint please install eslint by running npm install eslint in the workspace folder day12
+or globally using 'npm install -g eslint'. You need to reopen the workspace after installing eslint.
+
+If you are using yarn or pnpm instead of npm set the setting `eslint.packageManager` to either `yarn` or `pnpm`
+Alternatively you can disable ESLint for the workspace folder day12 by executing the 'Disable ESLint' command.
+[Info  - 09:29:15] 
+Failed to load the ESLint library for the document c:\web\day12\web\crypto\components\aes.js
+
+To use ESLint please install eslint by running npm install eslint in the workspace folder day12
+or globally using 'npm install -g eslint'. You need to reopen the workspace after installing eslint.
+
+If you are using yarn or pnpm instead of npm set the setting `eslint.packageManager` to either `yarn` or `pnpm`
+Alternatively you can disable ESLint for the workspace folder day12 by executing the 'Disable ESLint' command.

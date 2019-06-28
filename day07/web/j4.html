@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+var Car = {
+	name:'k1',
+	size:1000,
+	go:function(){
+		return this.name+' Go';
+	},
+	stop:function(){
+		return this.name+' Stop';
+	}
+};
+
+var result = Car.go();
+alert(result);
+var d = new Date();
+
+// JavaScript Class
+function Person(name,age){
+	this.name = name;
+	this.age = age;
+};
+Person.prototype.print = function(){
+	alert(this.name + ' ' + this.age);
+};
+var p1 = new Person('James',30);
+var p2 = new Person('Tom',20);
+p1.print();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+

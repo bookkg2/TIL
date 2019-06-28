@@ -1,0 +1,66 @@
+package com.user;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import frame.Biz;
+import frame.Dao;
+import vo.User;
+
+public class UserBiz extends Biz<String, User> {
+
+	Dao<String,User> dao;
+	
+	public UserBiz(){
+		dao = new UserDao();
+	}
+	@Override
+	public void register(User v) throws Exception {
+		Connection con = null;
+		try {
+			con = getCon();
+			dao.insert(v, con);
+			//dao.insert(v, con);
+			con.commit();
+		}catch(Exception e) {
+			con.rollback();
+			throw e;
+		}finally {
+			close(con);
+		}
+	}
+
+	@Override
+	public void remove(String k) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modify(User v) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User get(String k) throws Exception {
+		Connection con = null;
+		User u = null;
+		try {
+			con = getCon();
+			u = dao.select(k, con);
+		}catch(Exception e) {
+			throw e;
+		}finally {
+			close(con);
+		}		
+		return u;
+	}
+
+	@Override
+	public ArrayList<User> get() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

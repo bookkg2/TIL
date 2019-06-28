@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+function display(data){
+	
+};
+function getData(){
+	$.ajax({
+		url:'chart',
+		success:function(result){
+			alert(result);
+		}
+	});
+};
+$(document).ready(function(){
+	getData();
+});
+</script>
+</head>
+<body>
+<h1>Keyword Chart</h1>
+<div></div>
+</body>
+</html>
+
+
+
+

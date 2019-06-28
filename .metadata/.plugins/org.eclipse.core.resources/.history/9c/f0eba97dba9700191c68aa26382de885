@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	height:100px;
+	border:2px solid red;
+}
+img{
+	width:50px;
+}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<h1>ITEM</h1>
+<div id="item"></div>
+<h1>CART</h1>
+<div id="cart"></div>
+</body>
+</html>
+
+
+
+
+

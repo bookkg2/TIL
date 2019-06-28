@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	height:100px;
+	border:2px solid red;
+}
+img{
+	width:50px;
+}
+</style>
+<script>
+function cartleave(e){
+	console.log('leave');
+};
+function cartdrop(e){
+	e.preventDefault();
+	var src = e.dataTransfer.getData('m');
+	console.log(src+ ' '+e.target);
+	$('div:eq(1)').append($('#'+src));
+	
+};
+function itemdrop(e){
+	e.preventDefault();
+	var src = e.dataTransfer.getData('m');
+	console.log(src+ ' '+e.target);
+	$('div:eq(0)').append($('#'+src));
+	
+};
+function allowdrop(e){
+	e.preventDefault();
+};
+function mydrag(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('m',e.target.id);
+	console.log(e.target.id);
+};
+</script>
+</head>
+<body>
+<h1>Drag and Drop</h1>
+<h3>Item</h3>
+<div ondrop="itemdrop(event)" 
+     ondragover="allowdrop(event)">
+	<img src="m1.jpg" id="m1" 
+	draggable="true" 
+	ondragstart="mydrag(event)"
+	
+	>
+	<img src="m2.jpg" id="m2" 
+	draggable="true" 
+	ondragstart="mydrag(event)">
+	<img src="m3.jpg" id="m3" 
+	draggable="true" 
+	ondragstart="mydrag(event)">
+	<img src="m4.jpg" id="m4" 
+	draggable="true" 
+	ondragstart="mydrag(event)">
+	<img src="m5.jpg" id="m5" 
+	draggable="true" 
+	ondragstart="mydrag(event)">
+</div>
+<h3>Cart</h3>
+<div ondrop="cartdrop(event)" 
+	 ondragover="allowdrop(event)"
+	 ondragleave="cartleave(event)">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

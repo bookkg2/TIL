@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<temps>
+<temp>
+	<name>Seoul</name>
+	<data1>10</data1>
+	<data2>20</data2>
+	<data3>30</data3>
+</temp>
+<temp>
+	<name>Busan</name>
+	<data1>90</data1>
+	<data2>50</data2>
+	<data3>80</data3>
+</temp>
+</temps>

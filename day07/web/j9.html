@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+function add(){  
+	var id = document.myform.hobby;
+	for(var i in id){
+		if(id[i].checked){
+			alert(id[i].value);
+		};
+	};
+
+};
+</script>
+</head>
+<body>
+<form name="myform">
+ID<input type="text" name="id"><br>
+STUDY
+<input type="checkbox" name="hobby" value="s">
+MUSIC
+<input type="checkbox" name="hobby" value="m">
+TRAINING
+<input type="checkbox" name="hobby" value="t">
+<br>
+<input type="button" value="ADD"
+onclick="add();">
+</form>
+</body>
+</html>
+
+
+
+
+

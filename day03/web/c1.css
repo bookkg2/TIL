@@ -1,0 +1,21 @@
+@charset "EUC-KR";
+
+ *{
+  	/* border:3px solid black; */
+  }
+  /* CSS Commnets */
+  h1,h2{
+  	color:red;
+  	background: black;
+  }
+  #h1{
+    color:pink;
+  	background: blue;
+  }
+  .cc{
+    color:red;
+  	background: gray;
+  }
+  input[name="id"]{
+  	background: yellow;
+  }

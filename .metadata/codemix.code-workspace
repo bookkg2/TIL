@@ -1,0 +1,31 @@
+{
+  "folders": [
+	{
+		"path": "C:\\web\\day07"
+	},
+	{
+		"path": "C:\\web\\day09"
+	},
+	{
+		"path": "C:\\web\\day06"
+	},
+	{
+		"path": "C:\\web\\day10"
+	},
+	{
+		"path": "C:\\web\\day12"
+	},
+	{
+		"path": "C:\\web\\day13"
+	},
+	{
+		"path": "C:\\web\\day133"
+	},
+	{
+		"path": "C:\\web\\day1333"
+	}
+],
+  "settings": {
+    "php.suggest.basic": "false"
+  }
+}

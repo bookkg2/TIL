@@ -1,0 +1,6 @@
+<%@page import="java.util.Date"%>
+<%@ page contentType="text/event-stream;charset=UTF-8"
+%>
+retry:2000
+
+data:1111

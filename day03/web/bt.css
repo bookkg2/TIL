@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One|Spicy+Rice&display=swap');
+
+
+/* div css */
+
+.bt > a{
+	font-family: 'Spicy Rice', cursive;	
+	font-weight: bold;
+	font-size: 2.3em;
+	text-align:center;
+	line-height:70px;
+	
+	display:block;
+	width:150px;
+	height:70px;
+	
+	background:blue;
+	color:white;
+	border:15px solid red;
+	border-radius:30px;
+	box-shadow:5px 5px 5px black;
+	
+	margin:10px auto;
+}
+.bt > a:hover{
+	background:blue;
+	color:yellow;
+	border:15px solid pink;
+}

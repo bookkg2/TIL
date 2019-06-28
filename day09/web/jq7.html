@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	$('img').css('position','relative');
+	$('button').click(function(){
+		$('img').animate(
+			{
+				left:'300px',
+				opacity:'0.5',
+				width:'250px'
+		    }
+		);
+	});
+});
+</script>
+</head>
+<body>
+<button>Click</button><br>
+<img src="m3.jpg">
+</body>
+</html>
+
+
+
+
+

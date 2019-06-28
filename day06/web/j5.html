@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+input[type="text"]:focus{
+	background:gray;
+}
+</style>
+<script>
+function login(f){
+	var id = f.id.value;
+	var pwd = f.pwd.value;
+	
+	if(id == '' || id == null){
+		alert('ID is Madatory field !');
+		f.id.focus();
+		return;
+	}
+	if(pwd == '' || pwd == null){
+		alert('PWD is Madatory field !');
+		f.pwd.focus();
+		return;
+	}
+	
+	// PWD가 4자리 이상이어야 함
+	if(pwd.length < 4){
+		alert('Input 4 character');
+		f.pwd.focus();
+		return;
+	}
+	
+	var c = confirm('Are you Login ?');
+	if(c == true){
+		f.submit();
+	}
+};
+</script>
+</head>
+<body>
+<form action="login" method="get">
+ID<input type="text" name="id"><br>
+PWD<input type="text" name="pwd"><br>
+<input onclick="login(this.form);" type="button" value="login">
+</form>
+</body>
+</html>
+
+
+
+
+
+

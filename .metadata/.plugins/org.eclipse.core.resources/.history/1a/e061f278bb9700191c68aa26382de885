@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	height:100px;
+	border:2px solid red;
+}
+img{
+	width:50px;
+}
+</style>
+<script>
+function itemdrop(e){};
+function itemleave(e){};
+
+function cartdrop(e){};
+function cartleave(e){};
+
+function imgdrag(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('m',e.target.id);
+};
+
+</script>
+</head>
+<body>
+<h1>ITEM</h1>
+<div id="item" ondrop="itemdrop(event)" ondragleave="itemleave(event)">
+<img src="m1.jpg" draggable="true" ondragstart="imgdrag(event)">
+<img src="m2.jpg" draggable="true" ondragstart="imgdrag(event)">
+</div>
+<h1>CART</h1>
+<div id="cart" ondrop="cartdrop(event)" ondragleave="cartleave(event)"></div>
+</body>
+</html>
+
+
+
+
+

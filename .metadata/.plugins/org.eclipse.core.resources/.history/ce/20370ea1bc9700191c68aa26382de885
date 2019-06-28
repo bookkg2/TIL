@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	height:100px;
+	border:2px solid red;
+}
+img{
+	width:50px;
+}
+</style>
+<script>
+function itemdrop(e){
+	var src = e.dataTransfer.getData('m');
+	console.log(src);
+	$('#item').append($('#'+src));
+};
+function itemleave(e){};
+
+function allewdrop(e){
+	e.preventDefault();
+};
+function cartdrop(e){
+	var src = e.dataTransfer.getData('m');
+	console.log(src);
+	$('#cart').append($('#'+src));
+};
+function cartleave(e){
+
+};
+
+function imgdrag(e){
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('m',e.target.id);
+	console.log(e.target.id);
+};
+
+</script>
+</head>
+<body>
+<h1>ITEM</h1>
+<div id="item" ondrop="itemdrop(event)" ondragleave="itemleave(event)">
+<img src="m1.jpg" id="m1" draggable="true" ondragstart="imgdrag(event)">
+<img src="m2.jpg" id="m2" draggable="true" ondragstart="imgdrag(event)">
+</div>
+<h1>CART</h1>
+<div id="cart" ondrop="cartdrop(event)" ondragstart="allewdrop(e)" 
+ ondragleave="itemleave(event)"></div>
+</body>
+</html>
+
+
+
+
+

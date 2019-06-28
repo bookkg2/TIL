@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	if(typeof(EventSource) !== 'undefined'){
+		var app = new EventSource('test.jsp');
+		app.onopen = function(ev){
+			$('h3').text("OPEN");
+		};
+		app.onmessage = function(ev){
+			$('h3').text(ev.data);
+		};
+	}else{
+		alert('Server Event Not Available');
+	};
+});
+</script>
+</head>
+<body>
+<h1>Event</h1>
+<h3></h3>
+</body>
+</html>
+
+
+

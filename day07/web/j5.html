@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+var person = [
+   {id:"id01",name:"이말숙"},
+   {id:"id02",name:"김말숙"},
+   {id:"id03",name:"정말숙"},
+   {id:"id04",name:"황말숙"},
+   {id:"id05",name:"오말숙"}
+];
+function getdata(){
+	var div = document.getElementById('div');
+	var result = '';
+	for(var i in person){
+		person[i].print = function(){
+			return '<h2>'+
+			this.id+' '+this.name+
+			'</h2>';
+		};
+		result += person[i].print();
+	}
+    div.innerHTML = result;
+
+	
+};
+
+</script>
+</head>
+<body>
+<h1 onclick="getdata();">Click</h1>
+<div id="div"></div>
+</body>
+</html>
+
+
+
+
+
+

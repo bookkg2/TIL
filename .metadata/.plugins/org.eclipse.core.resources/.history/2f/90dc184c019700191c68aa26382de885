@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<style></style>
+<script>
+function makeChart(data){
+	Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Seoul Monthly Average Temperature'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    },
+    yAxis: {
+        title: {
+            text: 'Temperature (°C)'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series:data
+	});
+}; // end makeChart
+
+function Temp(n,d1,d2,d3){
+	this.name = n;
+	this.data = [d1,d2,d3];
+};
+
+function parsing(data){
+	var ts = $(data).find('temp');
+	var datas = [];
+	ts.each(function(index,item){
+		var name = $(this).find('name').text();
+		var data1 = $(this).find('data1').text();
+		var data2 = $(this).find('data2').text();
+		var data3 = $(this).find('data3').text();
+		var t = new Temp(name,data1,data2,data3);
+		datas.push(t);
+	});
+	consol.log(datas.toString());
+	
+};
+
+function getData(){
+	$.ajax({
+		url:'temp.xml',
+		success:function(data){
+			parsing(data);
+			//makeChart(eval(data));
+		}
+	});
+};
+
+$(document).ready(function(){
+	getData();
+	//setInterval(getData,5000);
+});
+</script>
+</head>
+<body>
+<h1>My Charts</h1>
+<div id="container" 
+style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</body>
+</html>
+
+

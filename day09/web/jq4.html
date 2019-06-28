@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>  
+$(document).ready(function(){
+	$('table').css({
+		width:400,
+		border:'1px solid black'
+	});
+	$('tbody > tr:even').css({
+		color:'white',
+		background:'blue'
+	});
+
+});
+</script>
+</head>
+<body>
+<h1>Table</h1>
+<table>
+	<thead>
+		<tr><th>ID</th><th>NAME</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>id01</td><td>James</td></tr>
+		<tr><td>id01</td><td>James</td></tr>
+		<tr><td>id01</td><td>James</td></tr>
+		<tr><td>id01</td><td>James</td></tr>
+		<tr><td>id01</td><td>James</td></tr>
+	</tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

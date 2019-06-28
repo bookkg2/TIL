@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+var person = [
+   {img:'m1.jpg',id:"id01",name:"이말숙"},
+   {img:'m2.jpg',id:"id02",name:"김말숙"},
+   {img:'m3.jpg',id:"id03",name:"정말숙"},
+   {img:'m4.jpg',id:"id04",name:"황말숙"},
+   {img:'m5.jpg',id:"id05",name:"오말숙"}
+];
+$(document).ready(function(){
+
+	$(person).each(function(idx,item){
+		var result = '';
+		result = 
+			'<img src="'+item.img+'">'
+			+item.id+' '+item.name+'<br>';
+		$('div').append(result);
+	});
+
+});
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+

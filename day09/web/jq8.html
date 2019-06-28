@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+div{
+	width:300px;
+	border:3px solid blue;
+	margin-top: 30px;
+}
+.hh{
+	color:red;
+	font-size: 1.2em;
+	background: pink;
+}
+.dd{
+	width:200px;
+	border:3px dotted red;
+	background: blue;
+}
+
+</style>
+<script>
+var cnt = 0;
+$(document).ready(function(){
+	$('button:eq(0)').click(function(){
+		$('div').append('<h3>Append'+cnt+'</h3>');
+		cnt++;
+	});
+	$('button:eq(1)').click(function(){
+		$('div').prepend('<h3>Prepend'+cnt+'</h3>');
+		cnt++;
+	});
+	$('button:eq(2)').click(function(){
+		$('div').after('<h3>After'+cnt+'</h3>');
+		cnt++;
+	});
+	$('button:eq(3)').click(function(){
+		$('div').before('<h3>Before'+cnt+'</h3>');
+		cnt++;
+	});
+	$('button:eq(4)').click(function(){
+		$('div').empty();
+	});
+	$('button:eq(5)').click(function(){
+		$('div').remove();
+	});
+	$('button:eq(6)').click(function(){
+		$('div').addClass('dd');
+		$('h1').addClass('hh');
+	});
+	$('button:eq(7)').click(function(){
+		$('div').removeClass('dd');
+		$('h1').removeClass('hh');
+	});
+});
+</script>
+</head>
+<body>
+<h1>DOM Management</h1>
+<button>Append</button>
+<button>Prepend</button>
+<button>After</button>
+<button>Before</button>
+<button>Empty</button>
+<button>Remove</button>
+<button>ADD CLASS</button>
+<button>REMOVE CLASS</button>
+<div></div>
+</body>
+</html>
+
+
+
+
+

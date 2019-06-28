@@ -1,0 +1,94 @@
+package com.product;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import com.frame.Biz;
+import com.frame.Dao;
+import com.vo.Product;
+
+public class ProductBiz extends Biz<String, Product> {
+
+	Dao<String, Product> dao;
+
+	public ProductBiz() {
+		dao = new ProductDao();
+	}
+
+	@Override
+	public void register(Product v) throws Exception {
+		Connection con = null;
+		try {
+			con = getCon(); // ������ �޸� Ŀ�ؼ��� ���⼭ ���� �־���
+			dao.insert(v, con);
+			// dao.insert(v, con); �׽�Ʈ��
+			con.commit();
+		} catch (Exception e) {
+			con.rollback(); // ���� �߻��ϸ� ������ �ߴ� �� �ٽ� rollback
+			throw e;
+		} finally {
+			close(con);
+		}
+	}
+
+	@Override
+	public void remove(String k) throws Exception {
+		Connection con = null;
+		try {
+			con = getCon(); // ������ �޸� Ŀ�ؼ��� ���⼭ ���� �־���
+			dao.delete(k, con);
+			con.commit();
+		} catch (Exception e) {
+			con.rollback(); // ���� �߻��ϸ� ������ �ߴ� �� �ٽ� rollback
+			throw e;
+		} finally {
+			close(con);
+		}
+	}
+
+	@Override
+	public void modify(Product v) throws Exception {
+		Connection con = null;
+		try {
+			con = getCon(); // ������ �޸� Ŀ�ؼ��� ���⼭ ���� �־���
+			dao.update(v, con);
+			con.commit();
+		} catch (Exception e) {
+			con.rollback(); // ���� �߻��ϸ� ������ �ߴ� �� �ٽ� rollback
+			throw e;
+		} finally {
+			close(con);
+		}
+	}
+
+	@Override
+	public Product get(String k) throws Exception {
+		Connection con = null;
+		Product u = null;
+		try {
+			con = getCon();
+			u = dao.select(k, con); // ������� �������� �ǹǷ� Ŀ��, �ѹ� �ʿ����
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			close(con);
+		}
+		return u;
+	}
+
+	@Override
+	public ArrayList<Product> get() throws Exception {
+		Connection con = null;
+		ArrayList<Product> Products = new ArrayList<Product>();
+		try {
+			con = getCon();
+			Products = dao.select(con); // ������� �������� �ǹǷ� Ŀ��, �ѹ� �ʿ����
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			close(con);
+		}
+		return Products;
+	}
+
+}

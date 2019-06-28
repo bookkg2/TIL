@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+var t = function(){
+	var time = document.getElementById('time');
+	var result = '';
+	var date = new Date();
+	result = date.toLocaleTimeString();
+	time.innerHTML = result;
+};
+setInterval(t,1000);
+</script>
+</head>
+<body>
+<h1 id="time"></h1>
+</body>
+</html>
+
+

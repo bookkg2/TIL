@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	$('button').eq(0).click(function(){
+		sessionStorage.m = 'id01';
+	});
+	$('button').eq(1).click(function(){
+		localStorage.m = 'id01';
+	});
+});
+</script>
+</head>
+<body>
+<button>Session Storage</button>
+<button>Local Storage</button>
+</body>
+</html>
+
+
+
+
+

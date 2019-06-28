@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<style>
+/* Global CSS */
+*{
+	margin:0;padding:0;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+ul,ol{
+	list-style: none;
+}
+
+header,section,footer{
+	margin:0 auto;
+}
+
+/* Header CSS */
+header{
+	width:800px;
+	height:150px;
+	background:pink;
+	position: relative;
+}
+
+header > #top_nav{
+	position:absolute;
+	height:30px;
+	width:200px;
+	right:1px;
+	top:1px;
+	font-size: 0.6em;
+}
+header > hgroup{
+	height:80px;
+	padding-top:30px;
+	text-align: center;
+	font-size: 1.3em;
+}
+header > #main_nav{
+	width:400px;
+	margin:0 auto;
+	height:40px;
+	font-size: 1.3em;
+}
+
+
+header > #top_nav > ul > li{
+	float:left;
+	margin:0 5px;
+}
+header > #main_nav > ul > li{
+	float:left;
+	margin:0 20px;
+}
+/* Section CSS */
+section{
+	width:800px;
+	height:500px;
+	background:gray;
+}
+#left_aside{
+	float:left;
+	width:150px;
+	height:500px;
+	background: green;
+}
+#center_aside{
+	float:left;
+	width:550px;
+	height:500px;
+	background: white;
+}
+#right_aside{
+	float:left;
+	width:100px;
+	height:500px;
+	background: gray;
+}
+#right_aside > img{
+	margin:5px 10px;
+}
+/* Footer CSS */
+footer{
+	width:800px;
+	height:50px;
+	background:black;
+}
+
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<header>
+	<nav id="top_nav">
+		<ul>
+			<li><a href="">LOGIN</a></li>
+			<li><a href="">REGISTER</a></li>
+			<li><a href="">ABOUT US</a></li>
+			<li><a href="">MAP</a></li>
+		</ul>
+	</nav>
+	<hgroup><h1>W2C School</h1></hgroup>
+	<nav id="main_nav">
+		<ul>
+			<li><a href="">HTML5</a></li>
+			<li><a href="">CSS3</a></li>
+			<li><a href="">AJAX</a></li>
+			<li><a href="">jQuery</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+	<aside id="left_aside"></aside>
+	<aside id="center_aside"></aside>
+	<aside id="right_aside">
+		<img src="https://via.placeholder.com/80x150">
+		<img src="https://via.placeholder.com/80x150">
+		<img src="https://via.placeholder.com/80x150">
+	</aside>
+</section>
+<footer></footer>
+</body>
+</html>
+
+

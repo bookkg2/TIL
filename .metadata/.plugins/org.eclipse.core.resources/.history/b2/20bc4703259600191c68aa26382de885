@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		$('#cf').attr('method','GET');
+		$('#cf').attr('action','calc1');
+		$('#cf').submit();
+	});
+});
+</script>
+</head>
+<body>
+<form id="cf">
+NUM1<input type="number" name="num1"><br>
+NUM2<input type="number" name="num2"><br>
+<button>Calc</button>
+</form>
+</body>
+</html>
+
+

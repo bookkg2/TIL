@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+function go(){
+	var url = 'j1.html';
+	var newWindow = window.open(url,'',resize=1,scrollbar=1,status=1);
+	newWindow.moveTo(0,0);
+	newWindow.resizeTo(screen.availWidth,
+					screen.availHeight);
+};
+function go2(){
+	var c = confirm('Are You Go to ...?');
+	if(c == true){
+		location.href='j1.html';
+	}
+}
+</script>
+</head>
+<body>
+<a href="#" onclick="go();">Click</a>
+<a href="#" onclick="go2();">Click</a>
+</body>
+</html>
+
+
+

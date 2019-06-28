@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBEw9qmYQ21IAdtC7b5tmXtefmFjTJg_AE"></script>
+
+<style>
+#map{
+	width:300px;
+	height:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+$(document).ready(function(){
+	var center = new google.maps.LatLng(34.865290, 128.434132);
+	var map = new google.maps.Map(
+		document.querySelector('#map'),
+		{
+		mapTypeId:google.maps.MapTypeId.ROADMAP,
+		zoom:17,
+		center:center
+		}
+	);
+
+	// HTML5 Geolocation API
+
+	// function success(p){
+	// 	var center = 
+	// 	new google.maps.LatLng(
+	// 		p.coords.latitude,
+	// 		p.coords.longitude
+	// 	);
+	// 	map.setCenter(center);
+	// };
+	// function error(){
+	// 	alert('Location Error');
+	// };
+	// var watch = window.navigator.geolocation.getCurrentPosition(
+	// 	success,
+	// 	error,
+	// 	{
+	// 		enableHighAccuracy:true,
+	// 		timeout:10000,
+	// 		maximumAge:0
+	// 	}
+	// );
+
+
+	
+});
+</script>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
+
+
+

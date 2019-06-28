@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	$('a:first').click(function(){
+		$('button').hide();
+	});
+	$('a:last').click(function(){
+		$('button').show();
+	});
+	$('a').hover(function(){
+		$('h1').text('Mouse Enter');
+	},function(){
+		$('h1').text('Mouse Leave');
+	});
+
+	$('input').on(
+		{
+			focus:function(){
+				$(this).css('background','gray');
+			},
+			keyup:function(){
+				alert($(this).val());
+			},
+			blur:function(){
+				$(this).css('background','white');
+			}
+		}
+	);
+
+});
+</script>
+</head>
+<body>
+ID<input type="text" name="id"><br>
+PWD<input type="password" name="pwd"><br>
+<h1></h1>
+<a href="#">HIDE</a>
+<a href="#">SHOW</a>
+<br>
+<button>Click</button>
+<button>Click</button>
+<button>Click</button>
+<button>Click</button>
+</body>
+</html>
+
+
+
+

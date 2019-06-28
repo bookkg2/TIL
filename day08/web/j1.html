@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+window.onload = function(){
+	var h1 = document.getElementById('h1');
+	var h2 = document.getElementById('h2');
+	var h3 = document.getElementById('h3');
+
+	var s1 = setInterval(function(){
+		var txt = h1.innerText;
+		h1.innerText = txt+'*';
+	},200);
+	var s2 = setInterval(function(){
+		var txt = h2.innerText;
+		h2.innerText = txt+'*';
+	},500);
+	var s3 = setInterval(function(){
+		var txt = h3.innerText;
+		h3.innerText = txt+'*';
+	},400);
+
+	setTimeout(function(){
+		clearInterval(s1);
+		clearInterval(s2);
+		clearInterval(s3);
+	},5000);
+};
+</script>
+</head>
+<body>
+<h1>Interval Test</h1>
+<h1 id="h1"></h1>
+<h1 id="h2"></h1>
+<h1 id="h3"></h1>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"
+    async defer></script>
+
+<style>
+#map{
+	width:300px;
+	height:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+$(document).ready(function(){
+	var center = new google.maps.LatLng(34.865290, 128.434132);
+	var map = new google.maps.Map(
+		document.querySelector('#map'),
+		{
+		mapTypeId:google.maps.MapTypeId.ROADMAP,
+		zoom:17,
+		center:center
+		}
+		);
+});
+</script>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+$(document).ready(function(){
+	$('textarea').keyup(function(){
+		var str = $(this).val();
+		$('h1').text(str.length);
+		if(str.length >= 50){
+			alert('max 50 character');
+			$('h1').css('color','red');
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h1></h1>
+<textarea cols="50" rows="10"></textarea>
+</body>
+</html>
+
+

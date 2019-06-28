@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style>
+#map{
+	width:300px;
+	height:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+$(document).ready(function(){
+	
+
+// HTML5 Geolocation API
+
+	function success(p){
+		
+		alert(p.coords.latitude,
+			p.coords.longitude);
+		//map.setCenter(center);
+	};
+	function error(){
+		alert('Location Error');
+	};
+	var watch = window.navigator.geolocation.getCurrentPosition(
+		success,
+		error,
+		{
+			enableHighAccuracy:true,
+			timeout:10000,
+			maximumAge:0
+		}
+	);
+});
+</script>
+</head>
+<body>
+<button>Italia</button>
+<div id="map"></div>
+</body>
+</html>
+
+
+

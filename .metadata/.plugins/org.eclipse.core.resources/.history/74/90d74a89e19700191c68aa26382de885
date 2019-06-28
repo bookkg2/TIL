@@ -1,0 +1,8 @@
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/event-stream; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	Date time = new Date();
+%>
+retry:2000
+data:<%=time %>

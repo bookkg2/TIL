@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<style></style>
+<script>
+function display(data){
+	$('h1').text(data);
+};
+
+function sendData(n1,n2){
+	var surl = 'calc1';
+	$.ajax({
+		url:surl,
+		method:"post",
+		data:{"num1":n1,"num2":n2},
+		success:function(result){
+			//alert('['+result+']');
+			display(result);
+		}
+	});
+};
+$(document).ready(function(){
+	$('button').click(function(){
+		var num1 = 
+		$('input[name="num1"]').val();
+		var num2 = 
+		$('input[name="num2"]').val();
+		sendData(num1,num2);
+	});
+});
+</script>
+</head>
+<body>
+<h1></h1>
+NUM1<input type="number" name="num1"><br>
+NUM2<input type="number" name="num2"><br>
+<button>Calc</button>
+</body>
+</html>
+
+
