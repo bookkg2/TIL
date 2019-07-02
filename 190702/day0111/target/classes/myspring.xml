@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   	 <bean id="ltv" class="com.sds.LTV" scope="prototype" p:size="75" p:speaker-ref="sp">
+   	 
+   	 </bean>
+   
+    <!--  <bean id="ltv" class="com.sds.LTV" scope="prototype">
+     	<property name="size" value="75"></property> property로 생성
+     	<property name="speaker" ref="sp"></property>
+     </bean>scope="prototype": 무조건 하나씩 레퍼런스를 가져라 -->
+     
+     
+     <bean name="stv" class="com.sds.STV" lazy-init="true">
+     <constructor-arg index="1" ref="sp"></constructor-arg> <!-- 두번째로 constructor를 통해서 Speaker를 넣어주겠다. -->
+     <constructor-arg index="0" value="65"></constructor-arg> <!-- index="0" : 값 들어가는 순서 , 먼저 constructor를 통해서 size에 값을 넣어주겠다. -->
+     </bean><!-- lazy-init="true" : 호출할때 객체 생성(coontruct) 하고 싶을 때 -->
+		
+	 <bean id="sp" class="com.sds.Speaker">
+	 	
+	 </bean> <!-- Speaker 생성 -->
+</beans>

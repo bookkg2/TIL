@@ -1,0 +1,29 @@
+package com.pro;
+
+import com.sds.Speaker;
+
+public class UserBiz implements Biz {
+	
+	Dao dao;
+	private Dao daoos; //agreegation °ü°è
+	
+	public UserBiz(){
+		
+	}
+
+	
+	public Dao getDao() {
+		return dao;
+	}
+
+
+	public void setDao(Dao dao) {
+		this.dao = dao;
+	}
+
+
+	public void register() {
+		dao.insert();
+		
+	}
+}

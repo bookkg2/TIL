@@ -1,0 +1,6 @@
+package com.pro;
+
+public class UserMariaDao implements Dao {
+	
+	
+}

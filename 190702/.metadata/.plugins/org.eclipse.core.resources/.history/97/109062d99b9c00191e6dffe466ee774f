@@ -1,0 +1,5 @@
+package day01111;
+
+public interface Biz {
+
+}

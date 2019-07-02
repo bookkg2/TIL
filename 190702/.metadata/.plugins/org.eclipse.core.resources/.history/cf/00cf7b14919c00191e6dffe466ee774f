@@ -1,0 +1,15 @@
+package com.sds;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class App {
+
+	public static void main(String[] args) {//IOC 방법
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("myspring.xml");
+		
+		TV tv = (STV)factory.getBean("stv");//stv라는 이름을 요청 (String XML에)
+		tv.turnOn();
+	}
+
+}
