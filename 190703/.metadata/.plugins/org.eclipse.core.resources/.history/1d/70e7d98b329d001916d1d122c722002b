@@ -1,0 +1,17 @@
+package springtv;
+
+public class Marganz implements Speaker {
+
+	@Override
+	public void up() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void down() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

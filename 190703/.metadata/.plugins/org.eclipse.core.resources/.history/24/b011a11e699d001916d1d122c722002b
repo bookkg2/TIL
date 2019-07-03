@@ -1,0 +1,8 @@
+package com.vo;
+
+public class User {
+	public String id;
+	public String pwd;
+	public String name;
+
+}

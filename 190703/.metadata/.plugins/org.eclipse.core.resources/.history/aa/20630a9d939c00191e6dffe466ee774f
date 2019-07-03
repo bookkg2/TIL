@@ -1,0 +1,16 @@
+package com.sds;
+
+public class LTV implements TV{
+	
+	public LTV() {
+		System.out.println("LTV Construct");
+	}
+	
+	public void turnOn() {
+		System.out.println("LTV On");
+	}
+	public void turnOff() {
+		System.out.println("LTV Off");
+	}
+
+}

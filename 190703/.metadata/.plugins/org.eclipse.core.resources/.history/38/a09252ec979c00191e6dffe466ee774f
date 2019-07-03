@@ -1,0 +1,22 @@
+package com.sds;
+
+public class LTV implements TV{
+	
+	public LTV() {
+		System.out.println("LTV Construct");
+	}
+	
+	public void turnOn() {
+		System.out.println("LTV On");
+	}
+	public void turnOff() {
+		System.out.println("LTV Off");
+	}
+
+	@Override
+	public void up() {//body가 없는 함수를 만듦 stv에서 사용하기 때문에 ..(흠..)
+		
+		
+	}
+
+}

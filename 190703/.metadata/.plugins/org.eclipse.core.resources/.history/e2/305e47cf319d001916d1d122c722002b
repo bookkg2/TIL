@@ -1,0 +1,29 @@
+package springtv;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class App {
+
+	public static void main(String[] args) {
+		System.out.println("Spring Start...");
+		
+		AbstractApplicationContext factory = 
+		new GenericXmlApplicationContext("mytv.xml");//XML을 보고 Spring container가 생성됨 즉 tv객체가 만들어짐 (IOC) 
+		
+		System.out.println("Spring Started");
+		
+		TV stv = (TV)factory.getBean("lltv");
+		stv.turnOn();
+		stv.volumeUp(10);
+		System.out.println(stv);
+		
+		
+		
+		
+		
+		factory.close();
+	}
+
+}

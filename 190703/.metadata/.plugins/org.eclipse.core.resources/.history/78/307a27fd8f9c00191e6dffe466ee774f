@@ -1,0 +1,11 @@
+package com.sds;
+
+public class STV {
+	public void turnOn() {
+		System.out.println("STV On");
+	}
+	public void turnOff() {
+		System.out.println("STV Off");
+	}
+	
+}

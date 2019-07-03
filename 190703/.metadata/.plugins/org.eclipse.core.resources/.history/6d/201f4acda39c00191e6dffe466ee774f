@@ -1,0 +1,27 @@
+package com.pro;
+
+public class UserBiz implements Biz {
+	
+	Dao dao;
+	
+	
+	public UserBiz(){
+		
+	}
+
+	
+	public Dao getDao() {
+		return dao;
+	}
+
+
+	public void setDao(Dao dao) {
+		this.dao = dao;
+	}
+
+
+	public void register() {
+		System.out.println("UserBiz register ¿Ï·á");
+		
+	}
+}

@@ -1,0 +1,14 @@
+package com.pro;
+
+public class UserBiz implements Biz {
+	
+	public UserBiz(){
+		
+	}
+
+	
+	public void register() {
+		System.out.println("UserBiz register ¿Ï·á");
+		
+	}
+}

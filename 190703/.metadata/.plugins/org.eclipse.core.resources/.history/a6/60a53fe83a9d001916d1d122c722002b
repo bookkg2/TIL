@@ -1,0 +1,7 @@
+package com.product;
+
+import com.frame.Biz;
+
+public class ProductBiz implements Biz<String, Product> {
+
+}

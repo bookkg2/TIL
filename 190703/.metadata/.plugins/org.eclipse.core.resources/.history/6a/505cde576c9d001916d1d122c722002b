@@ -1,0 +1,40 @@
+package com.product;
+
+import java.util.ArrayList;
+
+import com.frame.Dao;
+import com.vo.Product;
+
+public class ProductDao implements Dao<Integer, Product> {
+
+	@Override
+	public void insert(Product v) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Product v) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Integer k) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Product select(Integer k) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Product> select() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

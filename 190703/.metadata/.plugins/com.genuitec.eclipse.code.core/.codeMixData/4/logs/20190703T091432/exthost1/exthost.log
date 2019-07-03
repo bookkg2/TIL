@@ -1,0 +1,25 @@
+[2019-07-03 09:15:02.641] [exthost] [info] extension host started
+[2019-07-03 09:15:02.663] [exthost] [info] extension host started
+[2019-07-03 09:15:02.703] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:02.703] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\debug-auto-launch\dist\extension
+[2019-07-03 09:15:02.731] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:02.731] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\emmet\dist\extension
+[2019-07-03 09:15:02.847] [exthost] [info] ExtensionService#_doActivateExtension christian-kohler.path-intellisense {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:02.847] [exthost] [info] ExtensionService#loadCommonJSModule C:\Users\student\.codemix\extensions\christian-kohler.path-intellisense-1.4.2\out\src\extension
+[2019-07-03 09:15:03.043] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:03.043] [exthost] [info] ExtensionService#loadCommonJSModule C:\Users\student\.codemix\extensions\dbaeumer.vscode-eslint-1.9.0\client\out\extension
+[2019-07-03 09:15:03.189] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:03.189] [exthost] [info] ExtensionService#loadCommonJSModule C:\Users\student\.codemix\extensions\formulahendry.auto-close-tag-0.5.6\out\src\extension
+[2019-07-03 09:15:03.259] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag {"startup":true,"activationEvent":"*"}
+[2019-07-03 09:15:03.259] [exthost] [info] ExtensionService#loadCommonJSModule C:\Users\student\.codemix\extensions\formulahendry.auto-rename-tag-0.0.15\out\src\extension
+[2019-07-03 09:15:03.306] [exthost] [info] ExtensionService#_doActivateExtension vscode.grunt {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-03 09:15:03.306] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\grunt\dist\main
+[2019-07-03 09:15:03.353] [exthost] [info] ExtensionService#_doActivateExtension vscode.gulp {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-03 09:15:03.353] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\gulp\dist\main
+[2019-07-03 09:15:03.371] [exthost] [info] ExtensionService#_doActivateExtension vscode.jake {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-03 09:15:03.371] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\jake\dist\main
+[2019-07-03 09:15:03.409] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-03 09:15:03.409] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\npm\dist\main
+[2019-07-03 09:15:03.544] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-07-03 09:15:03.544] [exthost] [info] ExtensionService#loadCommonJSModule c:\Users\student\.codemix\engine\resources\app\extensions\typescript-language-features\dist\extension
+[2019-07-03 09:15:04.597] [exthost] [info] eager extensions activated

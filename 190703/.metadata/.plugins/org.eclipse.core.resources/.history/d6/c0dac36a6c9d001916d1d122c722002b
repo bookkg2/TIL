@@ -1,0 +1,49 @@
+package com.product;
+
+import java.util.ArrayList;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.frame.Biz;
+import com.frame.Dao;
+import com.vo.Product;
+
+@Service("pbiz")
+public class ProductBiz implements Biz<Integer, Product> {
+
+	@Resource(name = "pdo")
+	Dao<Integer,Product> dao;
+	
+	@Override
+	public void register(Product v) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Integer k) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modify(Product v) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Product get(Integer k) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Product> get() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

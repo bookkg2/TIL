@@ -1,0 +1,30 @@
+package com.sds;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class App {
+
+	public static void main(String[] args) {//IOC 방법
+		AbstractApplicationContext factory = new GenericXmlApplicationContext("myspring.xml");//XML에서 자동적으로 모든 객체 생성
+		
+		System.out.println("Spring Started");
+		
+		/*STV tv = (STV)factory.getBean("stv");//방법 1) stv라는 이름을 요청 (String XML에), tv(인터페이스) 주세요 ->stv 주세요
+		tv.turnOn();*/
+		
+		/*TV tv = (TV)factory.getBean("stv");//방법 2) tv(인터페이스) 주세요 ->stv 주세요
+		tv.turnOn();*/
+		
+		TV tv = (TV)factory.getBean("ltv"); 
+		tv.turnOn();
+		
+		TV tv2 = (TV)factory.getBean("ltv");
+		tv2.turnOn();
+		
+		if(tv == tv2) {//레퍼런스 확인
+			System.out.println("ok");
+		}
+	}
+
+}

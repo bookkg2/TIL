@@ -1,0 +1,8 @@
+package com.pro;
+
+public class UserBiz implements Biz {
+	
+	public UserBiz(){
+		
+	}
+}

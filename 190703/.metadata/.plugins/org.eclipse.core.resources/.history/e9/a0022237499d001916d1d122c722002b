@@ -1,0 +1,5 @@
+package com.frame;
+
+public class LogAdvice {
+
+}

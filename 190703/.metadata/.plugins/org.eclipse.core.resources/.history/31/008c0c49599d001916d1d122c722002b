@@ -1,0 +1,36 @@
+package com.frame;
+
+import java.util.Date;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class LogAdvice {
+	Date d = new Date();
+	public void printLog() {
+		Date d = new Date();
+		System.out.println(d+ "[공통 로그 ] 비즈니스 로직 수행  ....");
+	}
+	public void beforeLog(JoinPoint jp) {
+		String method = jp.getSignature().getName();// 함수 이름 찍기
+		Object [] args = jp.getArgs();//argument 찍기
+		System.out.println(method + ": " + args[0]); 
+		System.out.println("[before] 비즈니스 로직 수행  ....");
+	}
+	
+	public void afterLog() {
+		System.out.println("[after] 비즈니스 로직 수행  ....");
+	}
+	
+	public void exLog() {
+		Date d = new Date();
+		System.out.println(d+ "[EX 로그 ] Exception ..");
+	}
+	
+	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable{
+		System.out.println("Before Action ...");
+		Object obj = pjp.proceed();
+		System.out.println(d);
+		return obj;
+	}
+}

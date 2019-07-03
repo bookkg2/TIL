@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+     <bean id="ltv" class="com.sds.LTV" scope="prototype"></bean><!-- scope="prototype": 무조건 하나씩 레퍼런스를 가져라 -->
+     <bean name="stv" class="com.sds.STV" lazy-init="true"></bean><!-- lazy-init="true" : 호출할때 객체 생성(coontruct) 하고 싶을 때 -->
+		
+	 <bean id = "sp" class="com.sds.Speaker">
+	 	<constructor-arg ref="sp"></constructor-arg>
+	 </bean> <!-- Speaker 생성 -->
+</beans>

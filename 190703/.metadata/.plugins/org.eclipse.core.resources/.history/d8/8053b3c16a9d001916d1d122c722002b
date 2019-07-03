@@ -1,0 +1,51 @@
+package com.user;
+
+import java.util.ArrayList;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.frame.Biz;
+import com.frame.Dao;
+
+@Service("ubiz")
+public class UserBiz implements Biz<String, User> {
+
+	@Resource(name="udo")
+	Dao<String,User> dao;
+	
+	public void insert(User v) throws Exception {
+		
+		dao.insert(v);
+	}
+
+	@Override
+	public void update(User v) throws Exception {
+		dao.update(v);
+	}
+
+	@Override
+	public void delete(String k) throws Exception {
+		dao.delete(k);
+
+	}
+
+	@Override
+	public User select(String k) throws Exception {
+		System.out.println(d);
+		System.out.println("----------Biz Selected---------");
+		Thread.sleep(2800);//잠시 deley를 준다.
+//		if(k.equals("id001")) {
+//			throw new Exception("Not Found Exception ...");
+//		}
+		return dao.select(k);
+	}
+
+	@Override
+	public ArrayList<User> select() throws Exception {
+		
+		return dao.select();
+	}
+
+}

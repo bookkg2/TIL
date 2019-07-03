@@ -1,0 +1,7 @@
+package com.product;
+
+import com.frame.Dao;
+
+public class ProductDao implements Dao<Integer, Product> {
+
+}

@@ -1,0 +1,62 @@
+package springtv;
+
+import javax.annotation.Resource;
+import javax.inject.Qualifier;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifierer
+
+@Component("stv")
+public class STV implements TV {
+	String status;
+	int volume;
+	
+	/*@Autowired 자동적으로 Speaker type의 객체를 불러옴 (단 해당 타입 객체가 하나일 때만)*/
+	/*@Autowired @Qualifier("ms") /* 특정 객체를 가져오고 싶을 때 */
+	
+	@Resource(name="ms")
+	Speaker speaker;
+	
+	
+	public STV() {
+		System.out.println("Constructor STV ...");
+	}
+	/*
+	 * public void startTV() { System.out.println("Start STV ..."); }
+	 * 
+	 * public void endTV() { System.out.println("End STV ..."); }
+	 */
+	
+	@Override
+	public void turnOn() {
+		this.status = "STV ON";
+	}
+
+	@Override
+	public void turnOff() {
+		this.status = "STV OFF";
+	}
+
+	@Override
+	public void volumeUp(int v) {
+		speaker.up();
+	}
+
+	@Override
+	public void volumeDown(int v) {
+		speaker.down();
+	}
+	@Override
+	public String toString() {
+		return "STV [status=" + status + ", volume=" + volume + "]";
+	}
+	
+
+	
+	
+}
+
+
+
+

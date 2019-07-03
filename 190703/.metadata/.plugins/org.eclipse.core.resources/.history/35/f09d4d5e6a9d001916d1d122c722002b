@@ -1,0 +1,38 @@
+package com.user;
+
+import java.util.ArrayList;
+
+import com.frame.Dao;
+
+public class UserDao implements Dao<String, User> {
+
+	@Override
+	public void insert(User v) throws Exception {
+		
+
+	}
+
+	@Override
+	public void update(User v) throws Exception {
+		
+	}
+
+	@Override
+	public void delete(String k) throws Exception {
+		
+
+	}
+
+	@Override
+	public User select(String k) throws Exception {
+		
+		return null;
+	}
+
+	@Override
+	public ArrayList<User> select() throws Exception {
+		
+		return null;
+	}
+
+}

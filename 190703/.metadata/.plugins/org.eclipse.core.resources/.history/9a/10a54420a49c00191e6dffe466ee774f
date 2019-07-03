@@ -1,0 +1,43 @@
+package com.sds;
+
+public class STV implements TV{//pojo(일반 적인 자바 클래스)
+	
+	private int size;
+	private Speaker speaker; //agreegaion 관계
+	
+	public STV() {
+		System.out.println("STV Construct");
+	}
+	
+	public STV(int size) {
+		this.size = size;
+	}
+	
+	
+	public STV(Speaker speaker) {
+		
+		this.speaker = speaker;
+	}
+
+	public STV(int size, Speaker speaker) {
+		
+		this.size = size;
+		this.speaker = speaker;
+	}
+
+	public void up() {//up을 누르면 speaker 업
+		speaker.up();
+	}
+	public void turnOn() {
+		System.out.println("STV On");
+	}
+	public void turnOff() {
+		System.out.println("STV Off");
+	}
+
+	@Override
+	public String toString() {
+		return "STV [size=" + size + "]";
+	}
+	
+}

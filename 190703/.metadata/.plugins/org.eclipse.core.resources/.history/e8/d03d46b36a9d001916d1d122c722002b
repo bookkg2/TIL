@@ -1,0 +1,46 @@
+package com.user;
+
+import java.util.ArrayList;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.frame.Biz;
+import com.frame.Dao;
+
+@Service("ubiz")
+public class UserBiz implements Biz<String, User> {
+
+	@Resource(name="udo")
+	Dao<String,User> dao;
+	
+	public void insert(User v) throws Exception {
+		
+		
+	}
+
+	@Override
+	public void update(User v) throws Exception {
+		
+	}
+
+	@Override
+	public void delete(String k) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User select(String k) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<User> select() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
