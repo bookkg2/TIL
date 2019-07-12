@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mini.mapper.CustomerMapper"> <!-- Dao -> Mybatis -->
+<!-- 	<resultMap>
+	<result property = "id" column="id"></result> Want different colunm name
+	</resultMap> -->
+
+	
+	<insert id="insert" parameterType="customer">
+		INSERT INTO CUSTOMER_TB VALUES (#{cus_id},#{cus_pwd},#{cus_name},#{cus_phone},#{cus_addr},#{cus_email},'0')
+	</insert>
+	
+	<update id="update" parameterType="user">
+		UPDATE T_USER SET PWD=#{pwd},NAME=#{name} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM T_USER WHERE ID=#{obj}
+	</delete>
+	
+	<select id="select" parameterType="String" 
+	resultType="user">
+		SELECT * FROM T_USER WHERE ID=#{obj}
+	</select>
+	
+	<select id="selectall" 
+	resultType="user">
+		
+		SELECT * FROM T_USER ORDER BY 1
+		
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
