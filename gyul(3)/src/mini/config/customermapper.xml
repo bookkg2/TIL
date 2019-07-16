@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mini.mapper.CustomerMapper"> <!-- Dao -> Mybatis -->
+<!-- 	<resultMap>
+	<result property = "id" column="id"></result> Want different colunm name
+	</resultMap> -->
+
+	
+	<insert id="insert" parameterType="customer">
+		INSERT INTO CUSTOMER_TB VALUES (#{CUSTOMER_ID},#{CUSTOMER_PWD},#{CUSTOMER_NM},#{CUSTOMER_PHONE},#{CUSTOMER_ADDR},#{CUSTOMER_EMAIL},'0')
+	</insert>
+	
+<update id="update" parameterType="customer">
+		UPDATE CUSTOMER_TB SET CUSTOMER_PWD=#{CUSTOMER_PWD},CUSTOMER_NM=#{CUSTOMER_NM},CUSTOMER_PHONE=#{CUSTOMER_PHONE}, CUSTOMER_ADDR=#{CUSTOMER_ADDR},CUSTOMER_EMAIL=#{CUSTOMER_EMAIL},CUSTOMER_ADMIN='0' WHERE CUSTOMER_ID=#{CUSTOMER_ID}
+	</update> 
+	<!-- <delete id="delete" parameterType="String">
+		DELETE FROM T_USER WHERE ID=#{obj}
+	</delete> -->
+	
+	<select id="select" parameterType="String" 
+	resultType="customer">
+		SELECT * FROM CUSTOMER_TB WHERE CUSTOMER_ID=#{CUSTOMER_ID}
+	</select>
+	
+	<select id="selectall" 
+	resultType="customer">
+		
+		SELECT * FROM CUSTOMER_TB ORDER BY 1
+		
+	</select>
+	
+</mapper>
+
+
