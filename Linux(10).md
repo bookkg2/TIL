@@ -20,19 +20,27 @@
 
   1)  우선 하드디스크 2개를 추가한다. (2GB , 3GB)
 
+  ```bash
+$choibogun babo
+  ```
+
+  
+  
+  
+  
   > ls -l /dev/sd* 하면 기존 sda와 sdb,sdc를 확인 할 수 있다.
-
+  
   2) fdisk를 설정 (8e 즉 LInux LVM유형으로 )  
-
+  
   - fdisk /dev/sdb -> SCSI 0:1 하드디스크 선택
   - Command : n -> 새로운 파티션 분할
-  - Select : p -> Primary 파티션 선택
+- Select : p -> Primary 파티션 선택
   - Partition number (1-4) : 1 ->파티션 번호 1번 선택
-  - First sector : (Enter) -> 시작 센터 번호 입력(기본 설정)
+- First sector : (Enter) -> 시작 센터 번호 입력(기본 설정)
   - Last sector : (Enter) -> 마지막 섹터 번호 입력(기본 설정)
-  - Command : t -> 파일 시스템 유형 선택
+- Command : t -> 파일 시스템 유형 선택
   - Hex Code : 8e -> 선택한 파일 시스템 유형 번호 입력 ('L' 을 입력하면 유형 번호가 출력됨)
-  - Command : p -> 설정된 내용 확인
+- Command : p -> 설정된 내용 확인
   - Command : w -> 설정 저장
 
   
@@ -40,13 +48,13 @@
    3) 같은 방식으로 /dev/sdc의 파티션을 나눈다.
 
   
-
+  
    4) pvcreate을 입력해 물리적인 볼륨을 생성한다.
-
+  
   - 예 ) 'pvcreate /dev/sdb1' , 'pvcreate /dev/sdc1' 
-
+  
     
-
+  
    5) 2개의 물리 볼륨을 하나로 묶자. 즉 , 볼륨 그룹을 생성하는 단계이며 'vgcreate myVG /dev/sdb1 /dev/sdc1' 을 입력한다. 볼륨 그룹 이름을 myVG로 정했다.
 
 

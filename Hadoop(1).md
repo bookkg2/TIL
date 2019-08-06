@@ -52,7 +52,7 @@ Value(가치) - 빅데이터를 통해 어떤 문제를 해결할 수 있는가
   - 하드디스크:100GB
   - 운영체제:CentOS6.4(64비트)
 
-- 하둡 다운로드  : 
+- 하둡 다운로드  :  (가상분산모드)
 
   1.필요 파일 다운 로드
 
@@ -105,88 +105,89 @@ Value(가치) - 빅데이터를 통해 어떤 문제를 해결할 수 있는가
   - 하둡은 전체적인 네트워크를 묶으면 포트 없이 사용 함으로 firewall을 해제한다.
 
   ```
+  systemctl stop firewalld
   systemctl disable firewalld
-  ```
-
+```
   
 
-  1-1)하둡 해당 링크로 가서 tar 파일 받아오기!
-
-  - wget <https://archive.apache.org/dist/hadoop/common/hadoop-1.2.1/>[hadoop-1.2.1.tar.gz](http://apache.mirror.cdnetworks.com/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz)
-
-  - 해당 tar 파일을 디렉터리로 가져와서 압축을 푼다. ('tar xvf hadoop-1.2.1')
-
-  - /etc 밑으로 복사 (cp -r hadoop1.2.1 /etc/)
-
-    
-
+  
+1-1)하둡 해당 링크로 가서 tar 파일 받아오기!
+  
+- wget <https://archive.apache.org/dist/hadoop/common/hadoop-1.2.1/>[hadoop-1.2.1.tar.gz](http://apache.mirror.cdnetworks.com/hadoop/core/hadoop-1.2.1/hadoop-1.2.1.tar.gz)
+  
+- 해당 tar 파일을 디렉터리로 가져와서 압축을 푼다. ('tar xvf hadoop-1.2.1')
+  
+- /etc 밑으로 복사 (cp -r hadoop1.2.1 /etc/)
+  
+  
+  
   2. etc/hosts
-     - 해당 hosts 경로 및 이름 설정
-
+   - 해당 hosts 경로 및 이름 설정
   
 
-    3.etc/hostname
-
+  
+  3.etc/hostname
+  
   ```bash
   hostnamectl set-hostname hadoopserver2(원하는 이름)
-  ```
-
+```
   
 
-  ​       
-
+  
+​       
   
 
-  4. etc/sysconfig/network-scripts
-
-  TYPE="Ethernet"
-
-  BOOTPROTO=none
-
-  IPADDR=70.12.116.50
-
-  NETMASK=255.255.255.0
-
-  GATEWAY=70.12.116.2
-
-  DNS1=70.12.116.2
-
+  
+4. etc/sysconfig/network-scripts
+  
+TYPE="Ethernet"
+  
+BOOTPROTO=none
+  
+IPADDR=70.12.116.50
+  
+NETMASK=255.255.255.0
+  
+GATEWAY=70.12.116.2
+  
+DNS1=70.12.116.2
   
 
-  5. etc/profile
-
-  JAVA_HOME=/etc/jdk1.8 
-
-  HADOOP_HOME=/etc/hadoop-1.2.1
-
-  export PATH=$HADOOP_HOME/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
-
-  export JAVA_HOME TOMCAT_HOME HADOOP_HOME
-
-  CLASSPATH=$CLASSPATH:JAVA_HOME/lib
-
-  export CLASSPATH
-
-  > . ./etc/profile 로 초기화 시켜둔다. 
-
+  
+5. etc/profile
+  
+JAVA_HOME=/etc/jdk1.8 
+  
+HADOOP_HOME=/etc/hadoop-1.2.1
+  
+export PATH=$HADOOP_HOME/bin:$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
+  
+export JAVA_HOME TOMCAT_HOME HADOOP_HOME
+  
+CLASSPATH=$CLASSPATH:JAVA_HOME/lib
+  
+export CLASSPATH
+  
+> . ./etc/profile 로 초기화 시켜둔다. 
   
 
-  6. ssh
-
+  
+6. ssh
   
 
-  - $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa 
-
-  - $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys 
-
+  
+- $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa 
+  
+- $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys 
   
 
-  7. hadoop conf
-
-     
-
-  8. conf/core-site.xml 
-
+  
+7. hadoop conf
+  
+   
+  
+8. conf/core-site.xml 
+  
      ```bash
      <configuration>
      
@@ -207,14 +208,17 @@ Value(가치) - 빅데이터를 통해 어떤 문제를 해결할 수 있는가
      </property>
      
      </configuration>
-     ```
-
-     
+   ```
+  
+   > 9000 : 외부에서 NAMENODE로 들어오는 통로 (그마나 리눅스 대역이 사용하지 않는 포트여서 이용한다.)
+     >
+   > - fs.default.name : HDFS의 기본 이름을 의미하며, URL 형태로 사용됩니다. 기본값은 "file://" 로 돼 있지만 실제로는 "hdfs://localhost:9000"과 같은 형식으로 사용된다. 
+     > - hadoop.tmp.dir : 하둡에서 발생하는 임시 데이터를 저장하기 위한 공간입니다. 
 
    
-
+  
      9.conf/hdfs-site.xml
-
+  
    ```bash
   <configuration>
   
@@ -248,17 +252,17 @@ Value(가치) - 빅데이터를 통해 어떤 문제를 해결할 수 있는가
   
     <value>true</value>
   
-  </property>
+</property>
   
-  </configuration>
+</configuration>
    ```
 
   
 
    
-
-  10. conf/mapred-site.xml
-
+  
+  10. conf/mapred-site.xml (맵리듀스 시스템 구성)
+  
    ```bash
   <configuration>
   
@@ -268,46 +272,57 @@ Value(가치) - 빅데이터를 통해 어떤 문제를 해결할 수 있는가
   
     <value>localhost:9001</value>
   
-  </property>
+</property>
   
-  </configuration>
+</configuration>
    ```
 
   
 
+  > Tracker: 작업(Job)을 요청 받으면 JobTracker에서스케줄링을 관리하고 모니터링 한다. TaskTracker는 사용자가 설정한 맵리듀스 프로그램을 실행합니다.  데이터 노드에서 실행된다. 즉, TaskTracker는  JobTracker의 작업을 요청 받고,  JobTracker가 요청한 맵과 리듀스 개수만큼 맵 테스트와 리듀스 태스크를 생성 및 실행합니다. 
+>
   
 
   
-
-  
-
   11.conf/hadoop-env.sh (set nu 5번 라인에 JAVA_HOME 주석 풀고)
 
   - export JAVA_HOME=/etc/jdk1.8
-  - export HADOOP_HOME_WARN_SUPPRESS="TRUE"      ->  (발생되는 Warn을 다 넘긴다.)
 
-  /etc/bashrc (실행 될 때 마다 자동으로 실행되도록 설정)
+  - export HADOOP_HOME_WARN_SUPPRESS="TRUE"      ->  (발생되는 Warn을 다 넘긴다.) , 없을 시 Warning: $HADOOP_HOME is deprected. 라는 오류가 뜬다.
 
-  - 맨 밑에  '.  /etc/hadoop-1.2.1/conf/hadoop-env.sh' 입력   
+  - 설정 가능한 옵션
 
+    | 파라미터         | 내용                                                         |
+  | ---------------- | ------------------------------------------------------------ |
+    | HADOOP_CLASSPATH | 맵리듀스 프로그램을 실행할 때 외부 라이브러리를 참조하고 싶을 경우 해당 라이브러리의 경로를 설정 |
+  | HADOOP_HEAPSIZE  | 하둡 데몬에서  사용해야 할 메모리 크기입니다.기본메모리 크기는 1,000MB(1GB) 입니다. |
+    | HADOOP_SSH_OPTS  | 하둡 클러스터 간에  SSH 연결을 할 때 추가로 사용할 옵션을 설정할 수 있습니다. |
+  | HADOOP_LOG_DIR   | 하둡 데몬에서 생성되는 로그를 저장할 디렉터리를 설정할 수 있습니다. 별도의 설정값이 없을 경우 하둡 홈 디렉터리의 logs 디렉터리를 사용합니다. |
+    | HADOOP_SLAVES    | 데이터노드가 등록된 파일 경로를 설정합니다. 기본값은 하둡 홈 디렉터리의 conf에 있는 slaves 파일입니다. |
+  | HADOOP_MASTER    | 보조네임노드가 등록된 파일 경로를 설정합니다. 기본값은 하둡 홈 디렉터리의 conf에 있는 masters 파일입니다. |
+  
+/etc/bashrc (실행 될 때 마다 자동으로 실행되도록 설정)
+  
+- 맨 밑에  '.  /etc/hadoop-1.2.1/conf/hadoop-env.sh' 입력   
   
 
   
 
+  
   12.format (reboot 한번 하고 실행) - hadoop-1.2.1 에 ls 해보면 'name' 디렉터리가 생성된다.
-
-  - 'hadoop namenode -format'
-
   
-
+  - 'hadoop namenode -format'
+  
+  
+  
   13.   start-all.sh (하둡 실행) - hadoop-1.2.1 에 ls 해보면 'data' 디렉터리가 생성된다. (data : 실질적으로 담기는 곳 ) 
-
-      
-
+  
+  ​    
+  
   14. jps 로 확인 (Jps , JobTracker , DataNode, SecondaryNameNode,NameNode 있는지 확인)
-
+  
   15. 컴퓨터를 끌때는 stop-all.sh 하고 끌것!!!!!!!
-
+  
   
 
 > ssh : network 이동 , password 입력 , 나오고 싶으면 exit 
