@@ -2,7 +2,7 @@
 
 ##### 텍스트뷰
 
-- text 속성을 추가하는 방법은 text 속성 값으로 직접 문자열을 넣는 방법과 /app/res/values 폴더에서 string.xml 파일에 작성하여 이용
+- text 속성을 추가하는 방법은 text 속성 값으로 직접 문자열을 넣는 방법과 /app/res/values 폴더에서 string.xml 파일에 작성하여 이용합니다
 
         ```xml
 <resources>
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RadioButton" />
-
+    
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
