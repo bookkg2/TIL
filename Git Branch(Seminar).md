@@ -18,7 +18,7 @@ Branch는 일회용이다 !
 
 Create Branch (Default Branch : Master)
 
-```
+```bash
 git branch [branch name]
 
 ex) git branch test
@@ -33,7 +33,7 @@ git switch -c neo
 
 Switch Branch
 
-```
+```bash
 git switch [branch name]
 ex) git switch test
 ```
@@ -42,7 +42,7 @@ or
 
 Checkout branch
 
-```
+```bash
 git checkout [branchout]
 원래는 이거였는데 최신버전에서 switch가 추가됨
 ```
@@ -51,13 +51,13 @@ Merge
 
 - Fast-Forward
 
-  ```
+  ```bash
   ex) git merge test
   ```
 
 Delete Branch
 
-```
+```bash
 git branch -d [Branch name]
 git branch -d test
 ```
@@ -72,13 +72,13 @@ III. Merge 시나리오
 
 - 항상 Merge 할때 Main이 될 branch로가서 Merge하면 됨.
 
-```
+```bash
 git reset --hard HEAD
 ```
 
 1. Fast forward Merge
 
-   ```
+   ```bash
    git merge test
    ```
 
@@ -86,7 +86,7 @@ git reset --hard HEAD
 
    conflict없이 서로 다른파일 수정해서 merge 하면 자동으로 commit하나 만들면서 merge해줌
 
-   ```
+   ```bash
    git log --oneline --graph
    ```
 
