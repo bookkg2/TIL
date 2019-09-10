@@ -929,7 +929,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
      (View1Fragment.java)
-
+    
      ```java
      package com.example.p287;
      
@@ -944,127 +944,136 @@ public class MenuActivity extends AppCompatActivity {
      import android.view.ViewGroup;
      import android.widget.Button;
      import android.widget.TextView;
-     
-     
-     public class View1Fragment extends Fragment {
-         Button button4,button5;
-         TextView textView;
-         @Override
-         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                  Bundle savedInstanceState) {
-             // Inflate the layout for this fragment
-             ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_view1, container, false);
-             button4 = viewGroup.findViewById(R.id.button4);
-             button5 = viewGroup.findViewById(R.id.button5);
-             textView = viewGroup.findViewById(R.id.textView);
-             button4.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                     MainActivity ma = new MainActivity(); //버튼이 클릭되면 main에 어느 부분을 수정한다.
-                     ma.setBt(); // 메인에 있는 함수 호출
-     
-                 }
-             });
-     
-             button5.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View view) {
-                     textView.setText("View1 Fragment");
-                 }
-             });
-             return viewGroup;
-         }
-     
-     
-     
-     
+
+
+​     
+```xml
+ public class View1Fragment extends Fragment {
+     Button button4,button5;
+     TextView textView;
+     @Override
+     public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+         // Inflate the layout for this fragment
+         ViewGroup viewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_view1, container, false);
+         button4 = viewGroup.findViewById(R.id.button4);
+         button5 = viewGroup.findViewById(R.id.button5);
+         textView = viewGroup.findViewById(R.id.textView);
+         button4.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 MainActivity ma = new MainActivity(); //버튼이 클릭되면 main에 어느 부분을 수정한다.
+                 ma.setBt(); // 메인에 있는 함수 호출
+ 
+             }
+         });
+ 
+         button5.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 textView.setText("View1 Fragment");
+             }
+         });
+         return viewGroup;
      }
-     
-     ```
+```
 
-     (fragment_view2.xml)
 
-     ```xml
-     <?xml version="1.0" encoding="utf-8"?>
-     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-         xmlns:tools="http://schemas.android.com/tools"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:background="#FFEB3B"
-         android:orientation="vertical"
-         tools:context=".View2Fragment" />
-     ```
+​     
+​     
+​     
+~~~xml
+ }
+ 
+ ```
 
-     (fragment_view2.java)
+ (fragment_view2.xml)
 
-     ```java
-     package com.example.p287;
-     
-     import androidx.lifecycle.ViewModelProviders;
-     
-     import android.os.Bundle;
-     
-     import androidx.annotation.NonNull;
-     import androidx.annotation.Nullable;
-     import androidx.fragment.app.Fragment;
-     
-     import android.view.LayoutInflater;
-     import android.view.View;
-     import android.view.ViewGroup;
-     
-     public class View2Fragment extends Fragment {
-     
-         @Override
-         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                                  @Nullable Bundle savedInstanceState) {
-             return inflater.inflate(R.layout.fragment_view2, container, false);
-         }
-     
+ ```xml
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="#FFEB3B"
+     android:orientation="vertical"
+     tools:context=".View2Fragment" />
+ ```
+
+ (fragment_view2.java)
+
+ ```java
+ package com.example.p287;
+ 
+ import androidx.lifecycle.ViewModelProviders;
+ 
+ import android.os.Bundle;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.Nullable;
+ import androidx.fragment.app.Fragment;
+ 
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+ 
+ public class View2Fragment extends Fragment {
+ 
+     @Override
+     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                              @Nullable Bundle savedInstanceState) {
+         return inflater.inflate(R.layout.fragment_view2, container, false);
      }
-     
-     ```
+ 
+ }
+ 
+ ```
 
-     (fragment_view3.xml)
+ (fragment_view3.xml)
 
-     ```xml
-     <?xml version="1.0" encoding="utf-8"?>
-     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-         xmlns:tools="http://schemas.android.com/tools"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:background="#1BB2C5"
-         android:orientation="vertical"
-         tools:context=".View3Fragment" />
-     ```
+ ```xml
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="#1BB2C5"
+     android:orientation="vertical"
+     tools:context=".View3Fragment" />
+ ```
 
-     (fragment_view3.java)
+ (fragment_view3.java)
 
-     ```java
-     package com.example.p287;
-     
-     import android.content.Context;
-     import android.net.Uri;
-     import android.os.Bundle;
-     
-     import androidx.fragment.app.Fragment;
-     
-     import android.view.LayoutInflater;
-     import android.view.View;
-     import android.view.ViewGroup;
-     
-     
-     
-     public class View3Fragment extends Fragment {
-     
-         @Override
-         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                  Bundle savedInstanceState) {
-             // Inflate the layout for this fragment
-             return inflater.inflate(R.layout.fragment_view3, container, false);
-         }
-     
+ ```java
+ package com.example.p287;
+ 
+ import android.content.Context;
+ import android.net.Uri;
+ import android.os.Bundle;
+ 
+ import androidx.fragment.app.Fragment;
+ 
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+~~~
+
+
+​     
+​     
+~~~java
+ public class View3Fragment extends Fragment {
+ 
+     @Override
+     public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                              Bundle savedInstanceState) {
+         // Inflate the layout for this fragment
+         return inflater.inflate(R.layout.fragment_view3, container, false);
      }
-     
-     ```
+ 
+ }
+ 
+ ```
 
-     > 프래그먼트를 사용하면 코드를 독립적으로 구성하기 때문에 코드를 더 많이 입력해야 할 수도 있습니다. 또한 프래그먼트를 완벽하게 이해하지 않으면 프래그먼트 자체가 어렵게 느껴질 수 있다. (사용 목적) 분할된 화면들을 독립적으로 구성하기 위해, 분할된 화면들의 상태를 관리하기 위해 
+ > 프래그먼트를 사용하면 코드를 독립적으로 구성하기 때문에 코드를 더 많이 입력해야 할 수도 있습니다. 또한 프래그먼트를 완벽하게 이해하지 않으면 프래그먼트 자체가 어렵게 느껴질 수 있다. (사용 목적) 분할된 화면들을 독립적으로 구성하기 위해, 분할된 화면들의 상태를 관리하기 위해 
+~~~
