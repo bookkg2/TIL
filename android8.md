@@ -669,7 +669,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 - 구글 API 사용 하여 GPS 맵 찍기 (방법 2 일반 [Empty] 에서 찍기)
 
-(manifests) - 바로 key 값을 넣어 줘도 된다. 
+(manifests) -  meta-data value에 key 값을 넣어 줘도 된다. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
