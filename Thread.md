@@ -324,3 +324,237 @@ public class Th4 {
 
     > Stop 보다는 Interrupt 를 사용해야 한다. Stop은 소멸되서 코드로 제어가 불가능 하기 때문에!!
 
+- PipedReader 와 PipedWriter
+
+  - 쓰레드 간에 데이터를 주고받을 때 사용된다. 다른 스트림과는 달리 입력과 출력스트림을 하나의 스트림으로 연결해서 데이터를 주고 받는다.
+
+  (OutputThread)
+
+       ```java
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+
+public class OutputThread extends Thread {
+	PipedWriter output;
+	public OutputThread(String name) {
+		super(name); // super로 하면 Thread의 이름이 된다.
+		output = new PipedWriter();
+	}
+	
+	public void run() {
+		try {
+			String msg = "OutputThread .... Hello";
+			System.out.println("send :" + msg);
+			output.write(msg);// output 이라는 파이프로 보낸다. 
+			output.close();// close는 항상 finally 에서 해주고 null 체트 한다. 
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	public PipedWriter getOutput() {
+		return output;
+	}
+	
+	public void connect(PipedReader input) {
+		try {
+			output.connect(input);//Thread끼리 연결할 곳을 세팅 해줘야힘.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+
+}
+
+       ```
+
+(InputThread)
+
+```java
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.io.StringWriter;
+
+public class InputThread extends Thread{
+	PipedReader input;
+	public InputThread(String name) {
+		super(name);
+		input = new PipedReader();
+	}
+	
+	public void run() {
+		int data = 0;
+		StringWriter sw = new StringWriter();
+		try {
+			while((data = input.read()) != -1) {
+				sw.write(data);//받은 것을 Byte 단위로 받아온다.
+				
+			}
+			System.out.println("Received : "+ sw.toString());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public PipedReader getInput() {
+		return input;
+	}
+	public void connect(PipedWriter output) {
+		try {
+			input.connect(output);//output될 곳을 연결 해줘야한다.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+```
+
+(Main)
+
+```java
+
+public class Main {
+
+	public static void main(String[] args) {
+		InputThread it = new InputThread("inThread");
+		OutputThread ot = new OutputThread("outThread");
+		it.connect(ot.getOutput()); // 두 개의 Thread를 연결
+		it.start();//input.read에서 멈춰 잇는다.
+		ot.start();// 데이터를 전송하면 input.read가 받는다. 
+	}
+
+}
+
+```
+
+- BufferedReader사용 하는 법
+
+  (OutputThread)
+
+```java
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.util.Scanner;
+
+public class OutputThread extends Thread {
+	PipedWriter output;
+	public OutputThread(String name) {
+		super(name); // super로 하면 Thread의 이름이 된다.
+		output = new PipedWriter();
+	}
+	
+	public void run() {
+	    String msg;
+		try {
+			
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Write : ");
+				msg = sc.nextLine();
+				output.write(msg);
+				output.close();
+				
+			
+			// output 이라는 파이프로 보낸다	
+		
+			/*
+			 * String msg = "OutputThread .... Hello"; System.out.println("send :" + msg);
+			 */
+			
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public PipedWriter getOutput() {
+		return output;
+	}
+	
+	public void connect(PipedReader input) {
+		try {
+			output.connect(input);//Thread끼리 연결할 곳을 세팅 해줘야힘.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+
+}
+
+```
+
+​        (InputThread)
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PipedReader;
+import java.io.PipedWriter;
+import java.io.StringWriter;
+
+public class InputThread extends Thread{
+	PipedReader input;
+	BufferedReader br; //BufferedReader는 스티링으로 받을 수 있다.
+	public InputThread(String name) {
+		super(name);
+		input = new PipedReader();
+		br = new BufferedReader(input);
+		}
+	
+	public void run() {
+		String data = " ";
+		StringBuffer sw = new StringBuffer();
+		
+		try {
+			System.out.println("Ready");
+			while((data = br.readLine()) != null) {
+				
+				sw.append(data);//받은 것을 Byte 단위로 받아온다.
+				
+			}
+			System.out.println("Received : "+ sw.toString());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public PipedReader getInput() {
+		return input;
+	}
+	public void connect(PipedWriter output) {
+		try {
+			input.connect(output);//output될 곳을 연결 해줘야한다.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+```
+
+​     (Main)
+
+```java
+
+public class Main {
+
+	public static void main(String[] args) {
+		InputThread it = new InputThread("inThread");
+		OutputThread ot = new OutputThread("outThread");
+		it.connect(ot.getOutput()); // 두 개의 Thread를 연결
+		it.start();//input.read에서 멈춰 잇는다.
+		ot.start();// 데이터를 전송하면 input.read가 받는다. 
+	}
+
+}
+
+```
+
+- 객체의 직렬화 - 
