@@ -342,29 +342,31 @@ public class OutputThread extends Thread {
 		output = new PipedWriter();
 	}
 	
-	public void run() {
-		try {
-			String msg = "OutputThread .... Hello";
-			System.out.println("send :" + msg);
-			output.write(msg);// output 이라는 파이프로 보낸다. 
-			output.close();// close는 항상 finally 에서 해주고 null 체트 한다. 
-		}catch(Exception e) {
-			
-		}
+```java
+public void run() {
+	try {
+		String msg = "OutputThread .... Hello";
+		System.out.println("send :" + msg);
+		output.write(msg);// output 이라는 파이프로 보낸다. 
+		output.close();// close는 항상 finally 에서 해주고 null 체트 한다. 
+	}catch(Exception e) {
+		
 	}
-	
-	public PipedWriter getOutput() {
-		return output;
-	}
-	
-	public void connect(PipedReader input) {
-		try {
-			output.connect(input);//Thread끼리 연결할 곳을 세팅 해줘야힘.
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}
+}
+
+public PipedWriter getOutput() {
+	return output;
+}
+
+public void connect(PipedReader input) {
+	try {
+		output.connect(input);//Thread끼리 연결할 곳을 세팅 해줘야힘.
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 
+}
+```
 
 }
 
@@ -557,4 +559,3 @@ public class Main {
 
 ```
 
-- 객체의 직렬화 - 
