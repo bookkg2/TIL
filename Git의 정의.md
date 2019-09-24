@@ -57,7 +57,7 @@ git은 여러가지의 Branch를 생성해서 합병과 삭제를 통해 여러�
 - Git 저장소 만들기 
   - 기존 프로젝트를 Git 저장소로 만드는 방법 -`.git`이라는 하위 디렉토리를 만든다. `.git` 디렉토리에는 저장소에 필요한 뼈대 파일(Skeleton)이 들어 있다
 
-```
+```bash
 $ git init
 ```
 
@@ -65,7 +65,7 @@ $ git init
 
 - Git 저장소에 파일을 추가하고 커밋 -> USER Email -> USER 이름 -> 그다음 push
 
-```
+```bash
 $ git add *.c
 $ git add README
 $ git commit -m 'initial project version'
@@ -76,7 +76,7 @@ $ git push -u origin master
 
 - Git 현재 상태 확인 
 
-```
+```bash
 $ git status
 ```
 
@@ -85,11 +85,11 @@ $ git status
 - 기존 저장소를  Clone 하기 
   - 다른 프로젝트에 참여하거나(Contribute) Git 저장소를 복사하고 싶을 때 `git clone` 명령을 사용한다. 이미 Subversion 같은 VCS에 익숙한 사용자에게는 `checkout`이 아니라 `clone`이라는 점이 도드라져 보일 것이다. Git이 Subversion과 다른 가장 큰 차이점은 서버에 있는 모든 데이터를 복사한다는 것이다. `git clone`을 실행하면 프로젝트 히스토리를 전부 받아온다. 실제로 서버의 디스크가 망가져도 클라이언트 저장소 중에서 아무거나 하나 가져다가 복구하면 된다 (GUI를 통해 CLONE해 올 수 도 있다.)
 
-```
+```bash
 $ git clone [url]
 ```
 
-```
+```bash
 $ git clone git://github.com/schacon/grit.git
 ```
 
