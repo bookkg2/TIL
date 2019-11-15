@@ -408,5 +408,6 @@ def result(request):
 
   
 
-- 추후에는 python으로 ORM을 사용하여 CRUD 구축 예정 
+  
+
 
