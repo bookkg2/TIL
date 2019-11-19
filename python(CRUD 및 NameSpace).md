@@ -40,7 +40,7 @@
   | 역할   | Method       | End-point              | Views(Function) |
   | ------ | ------------ | ---------------------- | --------------- |
   | Create | GET          | /articles/new          | new             |
-  | Create | POST         | /articles/             | create          |
+  | Create | POST         | /articles/new          | create          |
   | Read   | GET          | /articles/<id>/        | show            |
   | Read   | GET          | /articles/             | index           |
   | Update | GET          | /articles/<id>/edit/   | edit            |
