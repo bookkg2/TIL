@@ -107,3 +107,50 @@
 
   
 
+- 프린터(미완성)
+
+  ```java
+  import java.util.*;
+  class Solution {
+      public int solution(int[] priorities, int location) {
+          int answer = 1;
+          int check = priorities[location];
+          
+          ArrayList<Integer> reset = new ArrayList<>();
+          for(int i = 0 ; i < priorities.length; i++){
+              if(i == location){
+                  continue;
+              }else{
+                  reset.add(priorities[i]);
+              }
+          }
+          int i = 0;
+          while(true){
+           
+              if(check < reset.get(i)){
+                  answer++;
+                  i = i;
+                  for(int j= i; j< priorities.length - i; j++){
+                      if(check == reset.get(j)){
+                          answer++;
+                          return answer;
+                           break;
+                      }   
+                  }
+                  
+                  
+                  
+              }
+              
+              
+            
+              
+          }
+         
+            return answer;
+        
+      }
+  }
+  ```
+
+  
