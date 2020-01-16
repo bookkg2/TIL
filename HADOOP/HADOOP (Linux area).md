@@ -48,9 +48,9 @@
 
 ​          ○    5. LOAD 를 사용하여 DATA를 로그 파일을 로딩한다. 
 
-                 ```bash
+          
 LOAD DATA LOCAL INPATH '/root/glogs/product.log' OVERWRITE INTO TABLE PRODUCT_VISIT;
-                 ```
+                 
 
 > '/root/glogs/product.log'  : 로그가 저장된 텍스트 파일 경로
 >
